@@ -1,5 +1,15 @@
 #Correspondence
 ####Next generation associations
+Correpspondence aims to provide a base for creating associations between
+arbitrary ruby classes.  With polyglotting databases on the rise, and
+association code specific to the Object Mapper you are using,
+Correspondence attempts to bridge the gap.
+
+For example, if you have an `ActiveRecord::Base` class
+(lets call it User) that you have associated with a `Ripple::Document` like
+profile, implementing `@user.profile` is entirely manual.  As are getters and
+queryiers like `@user.profile=` or `@user.profile?`. If you have multiple
+associations like this in your codebase it gets messy quick.  
 
 ##Todo
 * Figure out final draft of DSL
@@ -10,6 +20,8 @@
   Support defining a class and finding multiple related objects
 * Arbitrary item `many` associations<br/>
   Support finding N arbitrary objects related to the querying object
+* Explore the possiblity of using this on an API like twitter, associating an
+  User object with a set of tweets only via `@user.tweets`
 * Automagically inferring inverse relationships.
 
 ##Usage
