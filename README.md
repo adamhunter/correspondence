@@ -2,6 +2,8 @@
 ####Next generation associations
 
 ##Todo
+* Figure out final draft of DSL
+* Get base proxy class working (not just serving up the actual target)
 * `one` associations<br/>
   Support defining a class and method to find associated object
 * `many` assocations<br/>
