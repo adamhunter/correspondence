@@ -1,6 +1,6 @@
 #Correspondence
 ####Next generation associations
-Correpspondence aims to provide a base for creating associations between
+Correspondence aims to provide a base for creating associations between
 arbitrary ruby classes.  With polyglotting databases on the rise, and
 association code specific to the Object Mapper you are using,
 Correspondence attempts to bridge the gap.
@@ -27,8 +27,8 @@ associations like this in your codebase it gets messy quick.
   Support defining a class and finding multiple related objects
 * Arbitrary item `many` associations<br/>
   Support finding N arbitrary objects related to the querying object
-* Explore the possiblity of using this on an API like twitter, associating an
-  User object with a set of tweets only via `@user.tweets`
+* Explore the possiblity of using this on an API like twitter, associating a
+  `User` object with a set of tweets only via `@user.tweets`
 * Automagically inferring inverse relationships.
 
 ##Usage
