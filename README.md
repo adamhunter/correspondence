@@ -25,6 +25,7 @@ method on the user class.
   class methods on the associating class, procs should resolve to the
   association class.
 * `:on` a symbol or string specifying the method that should be called on the
-  associating class as a reference to the association.
+  associating class as a reference to the association. Defaults to `:id`.
 * `:using` a symbol or string that is the method that will be called on the
-  association call.  This method will be passed the results of `:on`.
+  association call.  This method will be passed the results of `:on`. Defaults
+  to `:find`.
