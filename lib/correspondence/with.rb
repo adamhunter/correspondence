@@ -7,14 +7,12 @@ module Correspondence
 
     autoload :ManyProxy
     autoload :OneProxy
+    autoload :Proxy
     
     module ClassMethods
       def corresponds_with(association, options={}, &block)
-        correspondences[association.to_sym] = if plural_association?(association)
-          Correspondence::With::ManyProxy.new(options)
-        else
-          Correspondence::With::OneProxy.new(options)
-        end
+        type = plural_association?(association) ? 'Many' : 'One'
+        correspondences[association.to_sym] = const_get("#{type}Proxy").new(self, association, options)
       end
 
       def correspondences

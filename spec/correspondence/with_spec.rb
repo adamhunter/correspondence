@@ -1,13 +1,6 @@
 require 'spec_helper'
 
 describe Correspondence::With do
-  
-  before :each do
-    class Foo ; end
-    class Bar ; end
-    class Box ; end
-    [Foo, Bar, Box].each {|c| c.send(:include, Correspondence::With)}
-  end
 
   describe "creating an association" do
     it "should instantiate a one association when corresponding with a singular symbol" do
@@ -21,11 +14,10 @@ describe Correspondence::With do
     end
 
     it "should create an assocation with the associated class" do
-      pending 'refactoring'
-      Person.stub!(:find).with(1).and_return(@person = mock('Person', :id => 1))
+      Profile.stub!(:find).with(1).and_return(@profile = mock('Profile', :id => 1))
       @user = User.new
       @user.id = 1
-      @user.person.should eq(@person)
+      @user.profile.should eq(@profile)
     end
 
     it "should assume the classname is a constantized association name"

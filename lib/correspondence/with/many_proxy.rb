@@ -1,10 +1,10 @@
 module Correspondence
   module With
-    class ManyProxy
+    class ManyProxy < Proxy
 
-      def initialize(options)
-      end
-      
+      protected
+        def create_association
+        end
     end
   end
 end

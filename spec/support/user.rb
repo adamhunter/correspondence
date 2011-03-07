@@ -3,5 +3,5 @@ class User
 
   attr_accessor :id
 
-  corresponds_with :person
+  corresponds_with :profile
 end

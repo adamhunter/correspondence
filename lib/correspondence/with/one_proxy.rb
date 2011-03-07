@@ -1,10 +1,15 @@
 module Correspondence
   module With
-    class OneProxy
+    class OneProxy < Proxy
 
-      def initialize(options)
-      end
-      
+      protected
+        def create_association
+          root.class_eval <<-RB
+            def #{name}
+              #{@target}.#{@options[:using]}(#{@options[:on]})
+            end
+          RB
+        end
     end
   end
 end
