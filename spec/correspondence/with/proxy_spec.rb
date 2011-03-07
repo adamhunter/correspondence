@@ -13,8 +13,23 @@ describe Correspondence::With::Proxy do
   end
 
   it "should allow specifiying the target's class" do
-    proxy = TestProxy.new(Bar, :foo, {:class => Baz})
-    proxy.target.should eq(Baz)
+    proxy = TestProxy.new(Bar, :foo, {:class => Foo})
+    proxy.target.should eq(Foo)
+  end
+
+  it "should allow using a string to specify the target's class" do
+    proxy = TestProxy.new(Bar, :foo, {:class => 'Foo'})
+    proxy.target.should eq(Foo)
+  end
+
+  it "should allow using a proc to specify the target's class" do
+    proxy = TestProxy.new(Bar, :foo, {:class => proc { Foo }})
+    proxy.target.should eq(Foo)
+  end
+
+  it "should allow passing a symbol to reference a method to determine the target's class" do
+    proxy = TestProxy.new(Bar, :foo, {:class => :foo_class_name})
+    proxy.target.should eq(Foo)
   end
 
 end

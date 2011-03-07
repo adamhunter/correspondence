@@ -1,5 +1,8 @@
+class Bar
+  def self.foo_class_name; Foo; end
+end
+
 class Foo ; end
-class Bar ; end
 class Box ; end
 class Baz ; end
 

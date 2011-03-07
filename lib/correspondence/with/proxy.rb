@@ -15,12 +15,18 @@ module Correspondence
 
       protected
         def set_target
-          if @options[:class_name]
-            @options[:class_name].constantize
-          elsif @options[:class]
+          @options[:class] = @options[:class_name] if @options[:class_name]
+
+          if @options[:class].is_a?(Class)
             @options[:class]
+          elsif @options[:class].is_a?(String)
+            @options[:class].constantize
+          elsif @options[:class].is_a?(Symbol)
+            root.send(@options[:class])
+          elsif @options[:class].respond_to?(:call)
+            @options[:class].call
           else
-            @name.to_s.classify.constantize
+            @name.to_s.classify.constantize 
           end
         end
 

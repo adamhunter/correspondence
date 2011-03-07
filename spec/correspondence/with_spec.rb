@@ -20,8 +20,6 @@ describe Correspondence::With do
       @user.profile.should eq(@profile)
     end
 
-    it "should assume the classname is a constantized association name"
-    it "should allow specifiying the :class_name"
     it "should assume the default finder method is :find"
     it "should allow specifiying the :finder_method"
     it "should assume the default correspondence method is :id"
