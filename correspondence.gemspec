@@ -12,6 +12,9 @@ Gem::Specification.new do |s|
   s.summary     = %q[Next generation object associations.]
   s.description = %q[Associate related ruby objects, like ActiveRecord assocations for arbitrary classes. Useful for polyglot programming across seperate data stores using different Object Mappers.]
 
+  s.add_dependency 'activesupport', '~> 3.0.0'
+  s.add_dependency 'i18n',          '~> 0.5'
+
   s.add_development_dependency 'rspec', '~> 2.5'
 
   s.rubyforge_project = "correspondence"
