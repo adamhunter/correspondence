@@ -10,12 +10,19 @@ For example, if you have an `ActiveRecord::Base` class
 profile, implementing `@user.profile` is entirely manual.  As are getters and
 queryiers like `@user.profile=` or `@user.profile?`. If you have multiple
 associations like this in your codebase it gets messy quick.  
+##Goals
+* **Not** to be the be all and end all for linking ruby classes together
+* Provide a common pattern that is extensible and reusable to link classes
+  together
 
 ##Todo
 * Figure out final draft of DSL
 * Get base proxy class working (not just serving up the actual target)
 * `one` associations<br/>
   Support defining a class and method to find associated object
+* Lazy load and memoize associatated targets
+* All association customization down to the owner instance (I think this will
+  be hard, maybe not though)
 * `many` assocations<br/>
   Support defining a class and finding multiple related objects
 * Arbitrary item `many` associations<br/>
